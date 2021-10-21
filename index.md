@@ -1,37 +1,70 @@
-## Welcome to GitHub Pages
+# CalculoNextBot - chat bot
+It is repository for chat bot: [@CalculoNextBot](https://t.me/CalculoNextBot)
 
-You can use the [editor on GitHub](https://github.com/Andreribas15/bot-para-calculos-matematicos/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Create your own bot for Telegram from this Git repo
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+How to create bot?
+1. Create bot with [@BotFather](https://telegram.me/BotFather) and take Secret Token
+2. Create bot in App and add Secret Token
+3. Add Public Key from App as [Deploy key](https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys) with read access (and write access for bot exporting if you need it)
+4. Do import for this git repo
 
-### Markdown
+Now you can talk with yours new Telegram Bot
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+See [more](https://help.bots.business/getting-started)
 
-```markdown
-Syntax highlighted code block
+## Commands - in commands folder
+File name - it is command name (Bot it can be rewritten in command description)
 
-# Header 1
-## Header 2
-### Header 3
+Command can have: `name`, `help`, `aliases` (second names), `answer`, `keyboard`, `scnarios` (for simple logic) and other options.
 
-- Bulleted
-- List
+### Command description
+It is file header:
 
-1. Numbered
-2. List
+    /*CMD
+      command: /test
+      help: this is help for ccommand
+      need_reply: [ true or false here ]
+      auto_retry_time: [ time in sec ]
+      answer: it is example answer for /test command
+      keyboard: button1, button2
+      aliases: /test2, /test3
+    CMD*/
 
-**Bold** and _Italic_ and `Code` text
+See [more](https://help.bots.business/commands)
 
-[Link](url) and ![Image](src)
-```
+### Command body
+It is command code in JavaScript.
+Use Bot Java Script for logic in command.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+For example:
+> Bot.sendMessage(2+2);
 
-### Jekyll Themes
+See [more](https://help.bots.business/scenarios-and-bjs)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Andreribas15/bot-para-calculos-matematicos/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+## Libraries - in libs folder
+You can store common code in the libs folder. File name - it is library name.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+For example code in myLib.js:
+
+    function hello(){ Bot.sendMessage("Hello from lib!") }
+    function goodbye(name){ Bot.sendMessage("Goodbye, " + name) }
+
+    publish({
+      sayHello: hello,
+      sayGoodbyeTo: goodbye
+    })
+
+then you can run in any bot's command:
+
+    Libs.myLib.hello()
+    Libs.myLib.sayGoodbyeTo("Alice")
+
+See [more](https://help.bots.business/git/library)
+
+## API
+See [API](https://api.bots.business/docs#/docs/summary)
+
+
+![](https://bots.business/images/web-logo.png)
