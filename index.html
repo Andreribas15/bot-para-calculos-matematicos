@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/style.css?v=42876d874d3e66fadb9847ee53adb675aebc829a">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup theme-color -->
+<!-- start theme color meta headers -->
+<meta name="theme-color" content="#151515">
+<meta name="msapplication-navbutton-color" content="#151515">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<!-- end theme color meta headers -->
+
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CalculoNextBot - chat bot | bot-para-calculos-matematicos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CalculoNextBot - chat bot" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://calculo.bot.arnext.xyz/" />
+<meta property="og:url" content="https://calculo.bot.arnext.xyz/" />
+<meta property="og:site_name" content="bot-para-calculos-matematicos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CalculoNextBot - chat bot" />
+<script type="application/ld+json">
+{"url":"https://calculo.bot.arnext.xyz/","@type":"WebSite","name":"bot-para-calculos-matematicos","headline":"CalculoNextBot - chat bot","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <a id="a-title" href="/">
+          <h1>bot-para-calculos-matematicos</h1>
+        </a>
+        <h2></h2>
+
+        <section id="downloads">
+          
+          <a href="https://github.com/Andreribas15/bot-para-calculos-matematicos" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1 id="calculonextbot---chat-bot">CalculoNextBot - chat bot</h1>
+<p>It is repository for chat bot: <a href="https://t.me/CalculoNextBot">@CalculoNextBot</a></p>
+
+<h2 id="create-your-own-bot-for-telegram-from-this-git-repo">Create your own bot for Telegram from this Git repo</h2>
+
+<p>How to create bot?</p>
+<ol>
+  <li>Create bot with <a href="https://telegram.me/BotFather">@BotFather</a> and take Secret Token</li>
+  <li>Create bot in App and add Secret Token</li>
+  <li>Add Public Key from App as <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">Deploy key</a> with read access (and write access for bot exporting if you need it)</li>
+  <li>Do import for this git repo</li>
+</ol>
+
+<p>Now you can talk with yours new Telegram Bot</p>
+
+<p>See <a href="https://help.bots.business/getting-started">more</a></p>
+
+<h2 id="commands---in-commands-folder">Commands - in commands folder</h2>
+<p>File name - it is command name (Bot it can be rewritten in command description)</p>
+
+<p>Command can have: <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">help</code>, <code class="language-plaintext highlighter-rouge">aliases</code> (second names), <code class="language-plaintext highlighter-rouge">answer</code>, <code class="language-plaintext highlighter-rouge">keyboard</code>, <code class="language-plaintext highlighter-rouge">scnarios</code> (for simple logic) and other options.</p>
+
+<h3 id="command-description">Command description</h3>
+<p>It is file header:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*CMD
+  command: /test
+  help: this is help for ccommand
+  need_reply: [ true or false here ]
+  auto_retry_time: [ time in sec ]
+  answer: it is example answer for /test command
+  keyboard: button1, button2
+  aliases: /test2, /test3
+CMD*/
+</code></pre></div></div>
+
+<p>See <a href="https://help.bots.business/commands">more</a></p>
+
+<h3 id="command-body">Command body</h3>
+<p>It is command code in JavaScript.
+Use Bot Java Script for logic in command.</p>
+
+<p>For example:</p>
+<blockquote>
+  <p>Bot.sendMessage(2+2);</p>
+</blockquote>
+
+<p>See <a href="https://help.bots.business/scenarios-and-bjs">more</a></p>
+
+<h2 id="libraries---in-libs-folder">Libraries - in libs folder</h2>
+<p>You can store common code in the libs folder. File name - it is library name.</p>
+
+<p>For example code in myLib.js:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function hello(){ Bot.sendMessage("Hello from lib!") }
+function goodbye(name){ Bot.sendMessage("Goodbye, " + name) }
+
+publish({
+  sayHello: hello,
+  sayGoodbyeTo: goodbye
+})
+</code></pre></div></div>
+
+<p>then you can run in any bot’s command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Libs.myLib.hello()
+Libs.myLib.sayGoodbyeTo("Alice")
+</code></pre></div></div>
+
+<p>See <a href="https://help.bots.business/git/library">more</a></p>
+
+<h2 id="api">API</h2>
+<p>See <a href="https://api.bots.business/docs#/docs/summary">API</a></p>
+
+<p><img src="https://bots.business/images/web-logo.png" alt="" /></p>
+
+      </section>
+    </div>
+  </body>
+</html>
