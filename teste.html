@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>CalculoNextBot - chat bot | bot-para-calculos-matematicos</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="CalculoNextBot - chat bot" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://calculo.bot.arnext.xyz/" />
+<meta property="og:url" content="https://calculo.bot.arnext.xyz/" />
+<meta property="og:site_name" content="bot-para-calculos-matematicos" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="CalculoNextBot - chat bot" />
+<script type="application/ld+json">
+{"headline":"CalculoNextBot - chat bot","url":"https://calculo.bot.arnext.xyz/","@type":"WebSite","name":"bot-para-calculos-matematicos","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=087f7af271fbbc2440b2ba6e263aeb3647771638">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">CalculoNextBot - chat bot</h1>
+      <h2 class="project-tagline"></h2>
+      
+        <a href="https://github.com/Andreribas15/bot-para-calculos-matematicos" class="btn">View on GitHub</a>
+      
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <h1 id="calculonextbot---chat-bot">CalculoNextBot - chat bot</h1>
+<p>It is repository for chat bot: <a href="https://t.me/CalculoNextBot">@CalculoNextBot</a></p>
+
+<h2 id="what-it-is">What it is?</h2>
+<p>This repository can be imported to <a href="https://bots.business">Bots.Business</a> as a worked chat bot.</p>
+
+<p><a href="https://bots.business">Bots.Business</a> - it is probably the first CBPaaS - Chat Bot Platform as a Service.</p>
+
+<p>A CBPaaS is a cloud-based platform that enables developers to create chatbots without needing to build backend infrastructure.</p>
+
+<h2 id="create-your-own-bot-for-telegram-from-this-git-repo">Create your own bot for Telegram from this Git repo</h2>
+
+<p>How to create bot?</p>
+<ol>
+  <li>Create bot with <a href="https://telegram.me/BotFather">@BotFather</a> and take Secret Token</li>
+  <li>Create bot in App and add Secret Token</li>
+  <li>Add Public Key from App as <a href="https://developer.github.com/v3/guides/managing-deploy-keys/#deploy-keys">Deploy key</a> with read access (and write access for bot exporting if you need it)</li>
+  <li>Do import for this git repo</li>
+</ol>
+
+<p>Now you can talk with yours new Telegram Bot</p>
+
+<p>See <a href="https://help.bots.business/getting-started">more</a></p>
+
+<h2 id="commands---in-commands-folder">Commands - in commands folder</h2>
+<p>File name - it is command name (Bot it can be rewritten in command description)</p>
+
+<p>Command can have: <code class="language-plaintext highlighter-rouge">name</code>, <code class="language-plaintext highlighter-rouge">help</code>, <code class="language-plaintext highlighter-rouge">aliases</code> (second names), <code class="language-plaintext highlighter-rouge">answer</code>, <code class="language-plaintext highlighter-rouge">keyboard</code>, <code class="language-plaintext highlighter-rouge">scnarios</code> (for simple logic) and other options.</p>
+
+<h3 id="command-description">Command description</h3>
+<p>It is file header:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/*CMD
+  command: /test
+  help: this is help for ccommand
+  need_reply: [ true or false here ]
+  auto_retry_time: [ time in sec ]
+  answer: it is example answer for /test command
+  keyboard: button1, button2
+  aliases: /test2, /test3
+CMD*/
+</code></pre></div></div>
+
+<p>See <a href="https://help.bots.business/commands">more</a></p>
+
+<h3 id="command-body">Command body</h3>
+<p>It is command code in JavaScript.
+Use Bot Java Script for logic in command.</p>
+
+<p>For example:</p>
+<blockquote>
+  <p>Bot.sendMessage(2+2);</p>
+</blockquote>
+
+<p>See <a href="https://help.bots.business/scenarios-and-bjs">more</a></p>
+
+<h2 id="libraries---in-libs-folder">Libraries - in libs folder</h2>
+<p>You can store common code in the libs folder. File name - it is library name.</p>
+
+<p>For example code in myLib.js:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function hello(){ Bot.sendMessage("Hello from lib!") }
+function goodbye(name){ Bot.sendMessage("Goodbye, " + name) }
+
+publish({
+  sayHello: hello,
+  sayGoodbyeTo: goodbye
+})
+</code></pre></div></div>
+
+<p>then you can run in any bot’s command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Libs.myLib.hello()
+Libs.myLib.sayGoodbyeTo("Alice")
+</code></pre></div></div>
+
+<p>See <a href="https://help.bots.business/git/library">more</a></p>
+
+<h2 id="api">API</h2>
+<p>See <a href="https://api.bots.business/docs#/docs/summary">API</a></p>
+
+<p><img src="https://bots.business/images/web-logo.png" alt="" /></p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/Andreribas15/bot-para-calculos-matematicos">bot-para-calculos-matematicos</a> is maintained by <a href="https://github.com/Andreribas15">Andreribas15</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
